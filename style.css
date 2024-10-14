@@ -34,7 +34,7 @@ h2{
 /* ------------------------------ Sección Menú -------------------------------*/
 .cabecera {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background-color: var(--color-de-fondo-menu);
@@ -45,17 +45,26 @@ h2{
 }
 
 .cabecera__titulo {
+    position: absolute;
+    left: 50px;
     font-size: 1.2rem;
-    text-align: center;
+    text-align: left;
 }
-
-.navegacion__lista {
+ .navegacion__elemento:nth-child(1){
     display: none;
 }
-.navegacion__lista:nth-child(6){
-    display: block;
+.navegacion__elemento:nth-child(2){
+    display: none;
 }
-
+.navegacion__elemento:nth-child(3){
+    display: none;
+}
+.navegacion__elemento:nth-child(4){
+    display: none;
+}
+.navegacion__elemento:nth-child(5){
+    display: none;
+}
 .navegacion__elemento a {
     font-size: 0.9rem;
 }
@@ -66,6 +75,9 @@ h2{
 
 .presentacion__subtitulo{
     text-align: justify;
+}
+.presentacion__foto{
+    width: 70%;
 }
 .redes{
     padding: 0;
@@ -134,14 +146,36 @@ h2{
     height: auto;
 }
 
-
-.proyectos{
-    
-}
 .proyectos__titulo{
     text-align: center;
 }
+.proyectos__container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.proyectos__imagen{
+    width:auto;
+}
 
+.proyectos__button__container{
+    display: flex;
+    gap: 1rem;
+
+}
+.proyecto__button{
+    border: none;
+    width: 96px;
+    height: 40px;
+    background-color: #2A7AE4;
+    color: white;
+    font-weight: bold;
+}
+.proyecto__button:nth-child(1){
+    background-color: white;
+    border: 1.5px solid #2A7AE4;
+    color: #2A7AE4;
+}
 /*-------------contacto--------------------------------------------*/
 .contacto{
     background-color: var(--fondo-de-sobre-mi);
@@ -177,6 +211,9 @@ h2{
     width: 133px;
     height: 40px;
 }
+.contacto__imagen{
+    display: none;
+}
 /* ------------------------------ Responsividad ---------------------------------------*/
 
 /* Tablets y pantallas más grandes */
@@ -207,21 +244,7 @@ h2{
         margin-top: 0;
        
     }
-    .navegacion__elemento:nth-child(1){
-        display: none;
-    }
-    .navegacion__elemento:nth-child(2){
-        display: none;
-    }
-    .navegacion__elemento:nth-child(3){
-        display: none;
-    }
-     .navegacion__elemento:nth-child(4){
-        display: none;
-    }
-     .navegacion__elemento:nth-child(5){
-        display: none;
-    }
+   
       .navegacion__elemento:nth-child(6){
          font-weight: bold;
     }
@@ -272,8 +295,12 @@ h2{
     .presentacion__foto{
         width: auto;
     }
-
-
+    .sobre-mi__texto{
+        width: 950px;
+    }
+    .presentacion, .sobre-mi, .habilidades, .aficiones, .formacion, .proyectos {
+    padding: 1rem 8rem;
+    }
     .navegacion__elemento a {
         font-size: 1.1rem;
     }
@@ -295,9 +322,21 @@ h2{
     .navegacion__elemento:nth-child(6){
          font-weight: bold;
     }
+   
+    
     .formacion__elemento{
         justify-content: center;
         height: 288px;
+    }
+    .proyectos__container{
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+
+    }
+    .proyectos__imagen{
+        width: 60%;
     }
     .contacto{
         display: flex;
@@ -311,6 +350,9 @@ h2{
     }
     .contacto__parrafo{
         color: #464646;
+    }
+    .contacto__imagen{
+        display: block;
     }
    
 }
